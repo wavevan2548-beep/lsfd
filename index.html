@@ -273,6 +273,71 @@ textarea{font:inherit;color:inherit;resize:vertical}
 .site-foot{border-top:1px solid var(--line);color:var(--muted);font-size:12px}
 .site-foot .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding-block:14px 18px}
 .site-foot .ver{font-family:var(--f-mono);font-variant-numeric:tabular-nums;border:1px solid var(--line);border-radius:999px;padding:1px 9px}
+/* case reports */
+.tri-green{--tri:#1D7A4C;--tri-fg:#FFFFFF} .tri-yellow{--tri:#E8B400;--tri-fg:#1B1819} .tri-red{--tri:#C1121F;--tri-fg:#FFFFFF} .tri-black{--tri:#111111;--tri-fg:#FFFFFF}
+.pill.tri{background:var(--tri);color:var(--tri-fg);border-color:var(--tri)}
+.pill.tri-black{box-shadow:0 0 0 1px var(--muted)}
+.tdot{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--tri);box-shadow:0 0 0 1px var(--line)}
+.case-layout{display:grid;grid-template-columns:minmax(0,370px) minmax(0,1fr);gap:20px;align-items:start}
+@media (max-width:900px){.case-layout{grid-template-columns:minmax(0,1fr)}}
+.case-filters{display:grid;gap:8px;padding:12px 14px;border-bottom:1px solid var(--line)}
+.case-filters input,.case-filters select{padding:8px 10px;font-size:14px}
+#caseItems{max-height:70vh;overflow-y:auto}
+@media (max-width:900px){#caseItems{max-height:none}}
+.ci{display:grid;gap:4px;width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--line);padding:12px 16px;cursor:pointer;color:inherit;font:inherit}
+.ci:hover{background:var(--sunk)}
+.ci.sel{background:var(--sunk);box-shadow:inset 3px 0 0 var(--red)}
+.ci-top{display:flex;justify-content:space-between;gap:8px;font-size:12.5px;color:var(--muted)}
+.ci-no{font-family:var(--f-mono);font-weight:600;color:var(--ink)}
+.ci-title{font-weight:600;overflow-wrap:anywhere}
+.ci-foot{display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-size:12.5px;color:var(--muted)}
+.case-main{min-width:0}
+.case-ph{padding:48px 24px;text-align:center;color:var(--muted)}
+.case-head{display:flex;gap:14px;align-items:flex-start;justify-content:space-between;padding:18px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.case-head h2{font-family:var(--f-body);font-size:22px;letter-spacing:0;text-transform:none;margin:2px 0 4px;overflow-wrap:anywhere}
+.caseno{font-family:var(--f-mono);font-weight:600;font-size:14px;color:var(--red)}
+.case-sec{padding:16px 18px;border-bottom:1px solid var(--line);display:grid;gap:8px;min-width:0}
+.case-sec:last-child{border-bottom:0}
+.case-sec h3{margin:0;font-size:13px;color:var(--muted);font-weight:600;letter-spacing:.04em}
+.case-detail{white-space:pre-wrap;overflow-wrap:anywhere;margin:0}
+.case-sec .table-wrap{border:1px solid var(--line);border-radius:8px}
+.vit{font-weight:600}
+.vit.high{color:var(--red)} .vit.normal{color:var(--ok)} .vit.low{color:var(--t-work)}
+.chips-row{display:flex;gap:6px;flex-wrap:wrap}
+.who-chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:3px 10px;font-size:13px;background:var(--surface)}
+.who-chip .mono{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.who-chip button{background:none;border:0;padding:0 0 0 2px;cursor:pointer;color:var(--muted);font-size:15px;line-height:1}
+.who-chip button:hover{color:var(--red)}
+.case-acts{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+#fCase{padding:18px}
+.sec-h{display:flex;align-items:baseline;gap:10px;border-top:1px solid var(--line);padding-top:14px;margin-top:4px}
+.sec-h b{font-size:15px}
+#ptList{display:grid;gap:12px}
+.pt{border:1px solid var(--line);border-radius:10px;padding:14px;display:grid;gap:12px;background:var(--sunk)}
+.pt input,.pt select{background:var(--surface)}
+.pt-h{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.pt-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,110px) minmax(0,90px);gap:10px}
+@media (max-width:640px){.pt-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.seg-row{display:grid;grid-template-columns:80px minmax(0,1fr);gap:10px;align-items:center}
+@media (max-width:480px){.seg-row{grid-template-columns:minmax(0,1fr)}}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+label.sg{display:inline-block;position:relative;color:var(--ink);font-weight:500}
+.sg input{position:absolute;opacity:0;width:1px;height:1px}
+.sg span{display:inline-block;padding:6px 14px;border:1px solid var(--line);border-radius:999px;font-size:13px;cursor:pointer;background:var(--surface)}
+.sg:hover span{border-color:var(--muted)}
+.sg input:focus-visible+span{outline:2px solid var(--amber);outline-offset:2px}
+.sg[class*="tri-"] input:checked+span{background:var(--tri);color:var(--tri-fg);border-color:var(--tri)}
+.sg.v-high input:checked+span{background:var(--red);color:var(--on-red);border-color:var(--red)}
+.sg.v-normal input:checked+span{background:var(--ok);color:var(--surface);border-color:var(--ok)}
+.sg.v-low input:checked+span{background:var(--t-work);color:var(--surface);border-color:var(--t-work)}
+.crew-pick{display:flex;gap:8px}
+.crew-pick select{flex:1;min-width:0}
+#fCase .acts{display:flex;gap:8px;flex-wrap:wrap}
+.hbar{display:flex;align-items:center;gap:10px}
+.hbar b{font-family:var(--f-mono);font-variant-numeric:tabular-nums;min-width:52px;text-align:right}
+.hbar .track{flex:1;height:8px;background:var(--sunk);border:1px solid var(--line);border-radius:99px;overflow:hidden;min-width:80px}
+.hbar .track i{display:block;height:100%;background:var(--red);border-radius:99px}
+.hbar .track i.zero{background:transparent}
 .notice{max-width:520px;margin:30px auto;text-align:center;color:var(--muted)}
 .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(20px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:8px;font-size:14px;z-index:20;max-width:calc(100% - 32px)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
@@ -378,6 +443,7 @@ textarea{font:inherit;color:inherit;resize:vertical}
       <div class="viewtabs" role="tablist">
         <button id="vtMe" aria-selected="true">เวรของฉัน</button>
         <button id="vtAdmin" aria-selected="false" hidden>Admin</button>
+        <button id="vtCase" aria-selected="false">เคส</button>
         <button id="vtCal" aria-selected="false">ปฏิทิน</button>
       </div>
       <button class="btn sm" id="logoutBtn">ออกจากระบบ</button>
@@ -444,6 +510,25 @@ textarea{font:inherit;color:inherit;resize:vertical}
       </div>
     </div>
 
+    <!-- case reports view -->
+    <div id="pCase" hidden>
+      <div class="case-layout">
+        <div class="card">
+          <div class="card-h"><h2>รายงานเคส</h2><div class="spacer"></div><button class="btn sm primary" id="caseNew">+ เขียนเคส</button></div>
+          <div class="case-filters">
+            <input id="caseQ" placeholder="ค้นหาเลขที่เคส / ชื่อเคส / ชื่อผู้บาดเจ็บ" aria-label="ค้นหาเคส">
+            <div class="row2">
+              <select id="caseLv" aria-label="กรองตามระดับ"><option value="">ทุกระดับ</option><option value="red">แดง</option><option value="yellow">เหลือง</option><option value="green">เขียว</option><option value="black">ดำ</option></select>
+              <select id="caseMine" aria-label="กรองเคส"><option value="">ทุกเคส</option><option value="mine">เคสที่ฉันเกี่ยวข้อง</option></select>
+            </div>
+          </div>
+          <div id="caseItems"></div>
+          <div class="empty" id="caseEmpty">ยังไม่มีเคส กด “+ เขียนเคส” เพื่อเริ่มเขียนเคสแรก</div>
+        </div>
+        <div class="card case-main" id="caseMain"></div>
+      </div>
+    </div>
+
     <!-- calendar view -->
     <div id="pCal" hidden>
       <div class="cal-layout">
@@ -504,6 +589,7 @@ textarea{font:inherit;color:inherit;resize:vertical}
       <div class="subtabs" role="tablist">
         <button data-sub="atOfficers" aria-selected="true">เจ้าหน้าที่</button>
         <button data-sub="atReport" aria-selected="false">รายงานโบนัส & ตัดยอด</button>
+        <button data-sub="atHours" aria-selected="false">ชั่วโมงเจ้าหน้าที่</button>
         <button data-sub="atBackups" aria-selected="false">ข้อมูลสำรอง</button>
         <button data-sub="atSettings" aria-selected="false">ตั้งค่า</button>
       </div>
@@ -566,6 +652,37 @@ textarea{font:inherit;color:inherit;resize:vertical}
         <p class="hint" style="margin-top:10px">เงินโบนัส = จำนวนครั้งที่ครบ 30 แต้ม × อัตราของตำแหน่ง (ตั้งค่าได้ที่แท็บ “ตั้งค่า”) · นับเฉพาะกะที่ออกเวรแล้ว</p>
       </div>
 
+      <div id="atHours" hidden>
+        <div class="card period">
+          <div class="period-info">
+            <span class="k">แสดงข้อมูลของ</span>
+            <select id="hrSrc" aria-label="เลือกรอบ" style="max-width:420px"></select>
+            <span class="hint" id="hrRange"></span>
+          </div>
+        </div>
+        <div class="admin-sum">
+          <div class="stat"><span class="k">ชั่วโมงรวมทั้งหน่วย</span><span class="v" id="hrTotal">0</span></div>
+          <div class="stat"><span class="k">เฉลี่ยต่อคน</span><span class="v" id="hrAvg">0</span><span class="hint">นับเฉพาะคนที่มีชั่วโมง</span></div>
+          <div class="stat"><span class="k">มีชั่วโมงแล้ว</span><span class="v" id="hrActive">0</span><span class="hint" id="hrActiveSub"></span></div>
+          <div class="stat"><span class="k">ชั่วโมงสูงสุด</span><span class="v" id="hrTop" style="font-size:20px">—</span><span class="hint" id="hrTopSub"></span></div>
+        </div>
+        <div class="card">
+          <div class="card-h">
+            <h2>ชั่วโมงสะสมรายคน</h2><div class="spacer"></div>
+            <input id="hrQ" class="search" placeholder="ค้นหาชื่อ / Badge" aria-label="ค้นหาเจ้าหน้าที่">
+            <select id="hrSort" aria-label="เรียงตาม" style="max-width:170px;padding:8px 10px;font-size:14px"><option value="hours">เรียงตามชั่วโมง</option><option value="rank">เรียงตามตำแหน่ง</option><option value="badge">เรียงตาม Badge</option></select>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th class="num">#</th><th>Badge</th><th>ชื่อ</th><th>ตำแหน่ง</th><th style="min-width:200px">ชั่วโมงรวม</th><th class="num">กลางวัน</th><th class="num">กลางคืน</th><th class="num">กะ</th><th class="num">แต้ม</th><th>เข้าเวรล่าสุด</th></tr></thead>
+              <tbody id="hrBody"></tbody>
+            </table>
+          </div>
+          <div class="empty" id="hrEmpty" hidden>ยังไม่มีเจ้าหน้าที่</div>
+        </div>
+        <p class="hint" style="margin-top:10px">กลางวัน = ชั่วโมงที่อยู่ในช่วง 02:01–17:59 · กลางคืน = 18:00–02:00 · รอบปัจจุบันนับรวมกะที่ยังไม่ออกเวรถึงเวลานี้ด้วย</p>
+      </div>
+
       <div id="atBackups" hidden>
         <div class="card">
           <div class="card-h"><h2>ข้อมูลสำรองจากการตัดยอด</h2><div class="spacer"></div><span class="hint" id="bkCount"></span></div>
@@ -608,6 +725,7 @@ textarea{font:inherit;color:inherit;resize:vertical}
               <label class="chk"><input type="checkbox" id="dOut" checked> แจ้งเมื่อออกเวร</label>
               <label class="chk"><input type="checkbox" id="dCut" checked> แจ้งเมื่อตัดยอด</label>
               <label class="chk"><input type="checkbox" id="dCal" checked> แจ้งเมื่อมีรายการใหม่ในปฏิทิน</label>
+              <label class="chk"><input type="checkbox" id="dCase" checked> แจ้งเมื่อมีเคสใหม่</label>
             </div>
             <div id="dMsg" class="msg err" hidden></div>
             <div class="acts" style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn primary" type="submit">บันทึก</button><button class="btn" type="button" id="dTest">ส่งข้อความทดสอบ</button></div>
@@ -633,7 +751,7 @@ textarea{font:inherit;color:inherit;resize:vertical}
 <footer class="site-foot">
   <div class="wrap">
     <span>LSFD Duty Roster</span>
-    <span class="ver" id="appVer" title="อัปเดตล่าสุด 23/10/2026">v1.3.0</span>
+    <span class="ver" id="appVer" title="อัปเดตล่าสุด 27/10/2026">v1.5.0</span>
   </div>
 </footer>
 <div class="toast" id="toast" hidden></div>
@@ -770,12 +888,12 @@ $('#fLogin').addEventListener('submit',async e=>{
 
 /* ---- session ---- */
 function stopAll(){unsubs.forEach(u=>u());unsubs=[];adminSubs.forEach(u=>u());adminSubs=[]}
-function logout(){stopAll();lsSet('lsfd_badge',null);lsSet('lsfd_admin',null);mode=null;myBadge=null;me=null;myShifts=[];events=[];closeManual();closeEvForm();authTab(false);show('vAuth');setView('me')}
+function logout(){stopAll();lsSet('lsfd_badge',null);lsSet('lsfd_admin',null);mode=null;myBadge=null;me=null;myShifts=[];events=[];resetCases();closeManual();closeEvForm();authTab(false);show('vAuth');setView('me')}
 $('#logoutBtn').onclick=logout;
 
 function enter(badge){
   stopAll(); mode='officer'; myBadge=badge; me=null; myShifts=[];
-  show('vDash'); $('#vtMe').hidden=false; $('#vtAdmin').hidden=true; setView('me'); closeManual(); closeEvForm(); renderMe(); subEvents();
+  show('vDash'); $('#vtMe').hidden=false; $('#vtAdmin').hidden=true; setView('me'); closeManual(); closeEvForm(); resetCases(); renderMe(); subEvents(); subCases();
   unsubs.push(db.doc('officers/'+badge).onSnapshot(s=>{
     if(!s.exists||!s.data().pwHash){toast('ไม่พบบัญชีนี้แล้ว');logout();return}
     me=s.data(); renderMe();
@@ -831,7 +949,7 @@ let DISCORD={};
 const siteUrl=()=>location.href.split('#')[0].split('?')[0];
 function renderDiscord(){
   if(!$('#fDiscord')||$('#fDiscord').contains(document.activeElement)) return;
-  $('#dUrl').value=DISCORD.url||''; $('#dIn').checked=DISCORD.onIn!==false; $('#dOut').checked=DISCORD.onOut!==false; $('#dCut').checked=DISCORD.onCut!==false; $('#dCal').checked=DISCORD.onCal!==false;
+  $('#dUrl').value=DISCORD.url||''; $('#dIn').checked=DISCORD.onIn!==false; $('#dOut').checked=DISCORD.onOut!==false; $('#dCut').checked=DISCORD.onCut!==false; $('#dCal').checked=DISCORD.onCal!==false; $('#dCase').checked=DISCORD.onCase!==false;
 }
 const validHook=u=>/^https:\/\/(canary\.|ptb\.)?(discord|discordapp)\.com\/api\/webhooks\/\d+\/[\w-]+/.test(u);
 async function postHook(url,payload){
@@ -844,6 +962,7 @@ function notify(kind,o,x){
   if(kind==='out'&&DISCORD.onOut===false) return;
   if(kind==='cut'&&DISCORD.onCut===false) return;
   if(kind==='cal'&&DISCORD.onCal===false) return;
+  if(kind==='case'&&DISCORD.onCase===false) return;
   if(kind==='manual'&&DISCORD.onOut===false) return;
   const link=siteUrl(); let embed;
   if(kind==='in'){
@@ -863,6 +982,12 @@ function notify(kind,o,x){
       {name:'เวลา',value:fDate(x.start)+' '+fTime(x.start)+' – '+fDate(x.end)+' '+fTime(x.end)+' น.'},
       {name:'ระยะเวลา',value:hm(x.minutes),inline:true},{name:'แต้มที่ได้',value:'+'+x.points,inline:true},
       {name:'หมายเหตุ',value:x.note||'-',inline:true}]};
+  }else if(kind==='case'){
+    const w=worstTri(x), pts=x.patients||[];
+    embed={title:'🚑 เคสใหม่: '+x.caseNo,color:TRI_HEX[w]||0xC1121F,description:`**${x.title}**`,fields:[
+      {name:'วันเวลา',value:fDate(x.at)+' '+fTime(x.at)+' น.',inline:true},{name:'ระดับสูงสุด',value:triLabel(w),inline:true},{name:'จำนวนผู้บาดเจ็บ',value:pts.length+' คน',inline:true},
+      {name:'ผู้บาดเจ็บ',value:pts.map((p,i)=>`${i+1}. ${ptName(p)}${p.sex?' · '+p.sex:''}${p.age?' · '+p.age+' ปี':''} — ${triLabel(p.tri)} · ชีพจร${vitLabel(p.pulse)} · ความดัน${vitLabel(p.bp)}`).join('\n').slice(0,1000)},
+      {name:'ผู้เขียนเคส',value:x.author?.name||'-',inline:true},{name:'เจ้าหน้าที่ที่ดูแล',value:(x.crew||[]).map(c=>c.name).join(', ')||'-',inline:true}]};
   }else if(kind==='cal'){
     const t=EVT[x.type]||EVT.event;
     embed={title:'📅 ปฏิทิน: '+t.label+'ใหม่',color:t.hex,description:`**${x.title}**`,fields:[
@@ -881,7 +1006,7 @@ $('#fDiscord').addEventListener('submit',async e=>{
   e.preventDefault(); err('#dMsg','');
   const url=$('#dUrl').value.trim();
   if(url&&!validHook(url)) return err('#dMsg','Webhook URL ไม่ถูกต้อง ต้องขึ้นต้นด้วย https://discord.com/api/webhooks/');
-  try{await db.doc('config/bonus').set({discord:{url,onIn:$('#dIn').checked,onOut:$('#dOut').checked,onCut:$('#dCut').checked,onCal:$('#dCal').checked}},{merge:true});document.activeElement.blur();toast('บันทึกการแจ้งเตือน Discord แล้ว')}
+  try{await db.doc('config/bonus').set({discord:{url,onIn:$('#dIn').checked,onOut:$('#dOut').checked,onCut:$('#dCut').checked,onCal:$('#dCal').checked,onCase:$('#dCase').checked}},{merge:true});document.activeElement.blur();toast('บันทึกการแจ้งเตือน Discord แล้ว')}
   catch(x){err('#dMsg','บันทึกไม่สำเร็จ ลองอีกครั้ง')}
 });
 $('#dTest').onclick=async()=>{
@@ -1068,6 +1193,165 @@ $('#fEv').addEventListener('submit',async e=>{
   finally{btn.disabled=false}
 });
 
+/* ---- case reports ---- */
+const TRI=[{k:'green',label:'เขียว'},{k:'yellow',label:'เหลือง'},{k:'red',label:'แดง'},{k:'black',label:'ดำ'}];
+const TRI_RANK={black:4,red:3,yellow:2,green:1};
+const TRI_HEX={green:0x1D7A4C,yellow:0xE8B400,red:0xC1121F,black:0x111111};
+const VIT=[{k:'high',label:'สูง'},{k:'normal',label:'ปกติ'},{k:'low',label:'ต่ำ'}];
+const triLabel=k=>(TRI.find(t=>t.k===k)||{}).label||'-';
+const vitLabel=k=>(VIT.find(t=>t.k===k)||{}).label||'-';
+const worstTri=c=>(c.patients||[]).reduce((w,p)=>(TRI_RANK[p.tri]||0)>(TRI_RANK[w]||0)?p.tri:w,'');
+const ptName=p=>((p.first||'')+' '+(p.last||'')).trim()||'ไม่ทราบชื่อ';
+let cases=[], caseSel=null, caseMode='none', caseEditing=null, caseCrew=[], officerPool=[], ptSeq=0;
+function subCases(){unsubs.push(db.collection('cases').orderBy('at','desc').limit(500).onSnapshot(q=>{cases=q.docs.map(d=>({id:d.id,...d.data()}));renderCaseList();if(caseMode==='view')renderCaseView()},()=>{}))}
+const myRef=()=>mode==='admin'?{admin:true,badge:'',name:'Admin'}:{badge:myBadge,name:me?me.first+' '+me.last:''};
+const isMineCase=c=>!!myBadge&&((c.author&&c.author.badge===myBadge)||(c.crew||[]).some(x=>x.badge===myBadge));
+const canEditCase=c=>mode==='admin'||isMineCase(c);
+const canDelCase=c=>mode==='admin'||(!!myBadge&&c.author&&c.author.badge===myBadge);
+function renderCaseList(){
+  if($('#pCase').hidden) return;
+  const q=$('#caseQ').value.trim().toLowerCase(), lv=$('#caseLv').value, mine=$('#caseMine').value==='mine';
+  $('#caseMine').hidden=mode==='admin';
+  const list=cases.filter(c=>{
+    if(lv&&!(c.patients||[]).some(p=>p.tri===lv)) return false;
+    if(mine&&mode!=='admin'&&!isMineCase(c)) return false;
+    if(!q) return true;
+    return [c.caseNo,c.title,...(c.patients||[]).map(ptName)].join(' ').toLowerCase().includes(q);
+  });
+  $('#caseEmpty').hidden=list.length>0;
+  $('#caseEmpty').textContent=cases.length?'ไม่พบเคสที่ตรงกับการค้นหา':'ยังไม่มีเคส กด “+ เขียนเคส” เพื่อเริ่มเขียนเคสแรก';
+  $('#caseItems').innerHTML=list.map(c=>{const w=worstTri(c);return `<button type="button" class="ci${c.id===caseSel?' sel':''}" data-id="${esc(c.id)}">
+    <span class="ci-top"><span class="ci-no">${esc(c.caseNo)}</span><span>${fDate(c.at)} ${fTime(c.at)}</span></span>
+    <span class="ci-title">${esc(c.title)}</span>
+    <span class="ci-foot">${w?`<span class="pill tri tri-${w}">${triLabel(w)}</span>`:''}<span>ผู้บาดเจ็บ ${(c.patients||[]).length} คน</span><span>· ${esc(c.author?.name||'-')}</span></span>
+  </button>`}).join('');
+  if(caseMode==='none') $('#caseMain').innerHTML='<div class="case-ph">เลือกเคสจากรายการเพื่อดูรายละเอียด<br>หรือกด “+ เขียนเคส” เพื่อเขียนเคสใหม่</div>';
+}
+function whoChip(x){return `<span class="who-chip">${esc(x.name)}${x.badge?` <span class="mono">#${esc(x.badge)}</span>`:''}</span>`}
+function renderCaseView(){
+  const c=cases.find(x=>x.id===caseSel);
+  if(!c){caseMode='none';caseSel=null;renderCaseList();return}
+  const w=worstTri(c), pts=c.patients||[];
+  $('#caseMain').innerHTML=`<div class="case-head"><div style="min-width:0"><span class="caseno">${esc(c.caseNo)}</span><h2>${esc(c.title)}</h2><div class="hint">${dowTh[dowOf(ymdOf(c.at))]} ${fDate(c.at)} เวลา ${fTime(c.at)} น.</div></div>${w?`<span class="pill tri tri-${w}" style="font-size:14px;padding:4px 14px">ระดับ${triLabel(w)}</span>`:''}</div>
+  <div class="case-sec"><h3>ผู้บาดเจ็บ (${pts.length} คน)</h3><div class="table-wrap"><table><thead><tr><th>#</th><th>ชื่อ – นามสกุล</th><th>เพศ</th><th class="num">อายุ</th><th>ระดับ</th><th>ชีพจร</th><th>ความดัน</th></tr></thead><tbody>${pts.map((p,i)=>`<tr><td class="mono">${i+1}</td><td>${esc(ptName(p))}</td><td>${esc(p.sex||'-')}</td><td class="num mono">${p.age!==''&&p.age!=null?esc(p.age):'-'}</td><td>${p.tri?`<span class="pill tri tri-${p.tri}">${triLabel(p.tri)}</span>`:'-'}</td><td><span class="vit ${esc(p.pulse||'')}">${vitLabel(p.pulse)}</span></td><td><span class="vit ${esc(p.bp||'')}">${vitLabel(p.bp)}</span></td></tr>`).join('')}</tbody></table></div></div>
+  <div class="case-sec"><h3>รายละเอียดเคส</h3>${c.detail?`<p class="case-detail">${esc(c.detail)}</p>`:'<span class="hint">ไม่มีรายละเอียด</span>'}</div>
+  <div class="case-sec"><h3>ผู้เขียนเคส</h3><div class="chips-row">${whoChip(c.author||{name:'-'})}</div>
+  <h3 style="margin-top:6px">เจ้าหน้าที่ที่ดูแลเคส</h3><div class="chips-row">${(c.crew||[]).length?(c.crew||[]).map(whoChip).join(''):'<span class="hint">ไม่ได้ระบุ</span>'}</div></div>
+  <div class="case-sec"><div class="case-acts">${canEditCase(c)?`<button class="btn sm" id="caseEdit">แก้ไขเคส</button>`:''}${canDelCase(c)?`<button class="btn sm danger" id="caseDel">ลบเคส</button>`:''}<span class="hint">บันทึกเมื่อ ${fDate(c.createdAt||c.at)} ${fTime(c.createdAt||c.at)}${c.updatedAt&&c.updatedAt!==c.createdAt?' · แก้ไขล่าสุด '+fDate(c.updatedAt)+' '+fTime(c.updatedAt)+(c.updatedBy?' โดย '+esc(c.updatedBy):''):''}</span></div></div>`;
+}
+function ptRowHtml(uid){
+  const segs=(name,items,cls)=>items.map(t=>`<label class="sg ${cls(t.k)}"><input type="radio" name="${name}-${uid}" value="${t.k}"><span>${t.label}</span></label>`).join('');
+  return `<div class="pt" data-uid="${uid}">
+    <div class="pt-h"><b>ผู้บาดเจ็บคนที่ <span class="pt-n"></span></b><button type="button" class="btn sm danger" data-ptdel>ลบ</button></div>
+    <div class="pt-grid">
+      <label>ชื่อ<input class="p-first" maxlength="40"></label>
+      <label>นามสกุล<input class="p-last" maxlength="40"></label>
+      <label>เพศ<select class="p-sex"><option value="">—</option><option value="ชาย">ชาย</option><option value="หญิง">หญิง</option><option value="อื่น ๆ">อื่น ๆ</option></select></label>
+      <label>อายุ<input class="p-age" type="number" min="0" max="130" inputmode="numeric"></label>
+    </div>
+    <div class="seg-row"><span class="lbl">ระดับเคส</span><div class="seg" role="radiogroup" aria-label="ระดับเคส">${segs('tri',TRI,k=>'tri-'+k)}</div></div>
+    <div class="seg-row"><span class="lbl">ชีพจร</span><div class="seg" role="radiogroup" aria-label="ชีพจร">${segs('pulse',VIT,k=>'v-'+k)}</div></div>
+    <div class="seg-row"><span class="lbl">ความดัน</span><div class="seg" role="radiogroup" aria-label="ความดัน">${segs('bp',VIT,k=>'v-'+k)}</div></div>
+  </div>`;
+}
+function addPt(p){
+  const uid='p'+(++ptSeq); $('#ptList').insertAdjacentHTML('beforeend',ptRowHtml(uid));
+  const el=$('#ptList').lastElementChild;
+  if(p){el.querySelector('.p-first').value=p.first||'';el.querySelector('.p-last').value=p.last||'';el.querySelector('.p-sex').value=p.sex||'';el.querySelector('.p-age').value=p.age??'';
+    ['tri','pulse','bp'].forEach(k=>{const r=el.querySelector(`input[name="${k}-${uid}"][value="${p[k]}"]`);if(r)r.checked=true})}
+  numberPts(); return el;
+}
+function numberPts(){const rows=[...document.querySelectorAll('#ptList .pt')];rows.forEach((r,i)=>{r.querySelector('.pt-n').textContent=i+1;r.querySelector('[data-ptdel]').hidden=rows.length<2})}
+function renderCrew(){
+  const author=caseEditing?caseEditing.author:myRef();
+  $('#crewChips').innerHTML=caseCrew.length?caseCrew.map((x,i)=>`<span class="who-chip">${esc(x.name)} <span class="mono">#${esc(x.badge)}</span><button type="button" data-crewdel="${i}" aria-label="เอา ${esc(x.name)} ออก">×</button></span>`).join(''):'<span class="hint">ยังไม่ได้เพิ่มเจ้าหน้าที่</span>';
+  const taken=new Set([...caseCrew.map(x=>x.badge),author&&author.badge].filter(Boolean));
+  $('#crewSel').innerHTML='<option value="">— เลือกเจ้าหน้าที่ —</option>'+officerPool.filter(o=>!taken.has(o.badge)).map(o=>`<option value="${esc(o.badge)}">#${esc(o.badge)} ${esc(o.name)} · ${esc(o.rank)}</option>`).join('');
+}
+async function loadPool(){
+  try{const q=await db.collection('officers').get();officerPool=q.docs.map(d=>d.data()).filter(o=>o.pwHash).map(o=>({badge:o.badge,name:o.first+' '+o.last,rank:o.rank||''})).sort((a,b)=>a.badge.localeCompare(b.badge))}catch(e){}
+  if($('#crewSel')) renderCrew();
+}
+function openCaseForm(c){
+  caseMode='form'; caseEditing=c||null; caseCrew=c?[...(c.crew||[])]:[];
+  const at=c?c.at:Date.now(), author=c?c.author:myRef();
+  $('#caseMain').innerHTML=`<div class="card-h"><h2>${c?'แก้ไขเคส':'เขียนเคสใหม่'}</h2></div>
+  <form id="fCase" novalidate>
+    <div class="row2"><label>เลขที่เคส<input id="cNo" maxlength="30" placeholder="เช่น EMS-231026-01"></label><label>ชื่อเคส<input id="cTitle" maxlength="100" placeholder="เช่น อุบัติเหตุรถชน ถนน Del Perro"></label></div>
+    <div class="row2"><label>วันที่<input type="date" id="cDate"></label><label>เวลา (เวลาไทย)<input type="time" id="cTime"></label></div>
+    <div class="sec-h"><b>ผู้บาดเจ็บ</b><span class="hint">ใส่ได้หลายคน</span></div>
+    <div id="ptList"></div>
+    <button type="button" class="btn sm" id="ptAdd" style="justify-self:start">+ เพิ่มผู้บาดเจ็บ</button>
+    <div class="sec-h"><b>รายละเอียดเคส</b></div>
+    <textarea id="cDetail" rows="6" maxlength="4000" aria-label="รายละเอียดเคส" placeholder="เหตุการณ์ อาการที่พบ การรักษาที่ให้ การนำส่งโรงพยาบาล ฯลฯ"></textarea>
+    <div class="sec-h"><b>เจ้าหน้าที่</b></div>
+    <div><span class="lbl">ผู้เขียนเคส</span><div class="chips-row" style="margin-top:6px">${whoChip(author)}</div></div>
+    <div><span class="lbl">เจ้าหน้าที่ที่ดูแลเคส</span>
+      <div class="crew-pick" style="margin-top:6px"><select id="crewSel" aria-label="เลือกเจ้าหน้าที่"></select><button type="button" class="btn sm" id="crewAdd">เพิ่ม</button></div>
+      <div class="chips-row" id="crewChips" style="margin-top:8px"></div></div>
+    <div id="cMsg" class="msg err" hidden></div>
+    <div class="acts"><button class="btn primary" type="submit" id="cSave">${c?'บันทึกการแก้ไข':'บันทึกเคส'}</button><button class="btn" type="button" id="cCancel">ยกเลิก</button></div>
+  </form>`;
+  $('#cNo').value=c?.caseNo||''; $('#cTitle').value=c?.title||''; $('#cDate').value=ymdOf(at); $('#cTime').value=hhmmOf(at); $('#cDetail').value=c?.detail||'';
+  (c?.patients?.length?c.patients:[null]).forEach(p=>addPt(p));
+  renderCrew(); loadPool(); renderCaseList();
+  $('#caseMain').scrollIntoView({block:'start',behavior:'smooth'}); $('#cNo').focus({preventScroll:true});
+}
+function showCase(id){caseSel=id;caseMode=id?'view':'none';caseEditing=null;renderCaseList();if(id){renderCaseView();if(window.innerWidth<900)$('#caseMain').scrollIntoView({block:'start',behavior:'smooth'})}}
+function resetCases(){cases=[];caseSel=null;caseMode='none';caseEditing=null}
+$('#caseNew').onclick=()=>{if(caseMode==='form'&&!caseEditing){$('#cNo').focus();return}caseSel=null;openCaseForm(null)};
+['#caseQ','#caseLv','#caseMine'].forEach(id=>$(id).addEventListener('input',renderCaseList));
+let leaveArm=null;
+$('#caseItems').addEventListener('click',e=>{const b=e.target.closest('.ci');if(!b)return;
+  if(caseMode==='form'&&leaveArm!==b.dataset.id){leaveArm=b.dataset.id;err('#cMsg','ยังไม่ได้บันทึกเคสที่กำลังเขียน กดรายการเดิมอีกครั้งเพื่อออกโดยไม่บันทึก');return}
+  leaveArm=null;showCase(b.dataset.id)});
+$('#caseMain').addEventListener('click',async e=>{
+  const t=e.target;
+  if(t.closest('#ptAdd')){const el=addPt(null);el.querySelector('.p-first').focus();return}
+  const pd=t.closest('[data-ptdel]'); if(pd){pd.closest('.pt').remove();numberPts();return}
+  if(t.closest('#crewAdd')){const b=$('#crewSel').value;const o=officerPool.find(x=>x.badge===b);if(o){caseCrew.push({badge:o.badge,name:o.name});renderCrew()}return}
+  const cd=t.closest('[data-crewdel]'); if(cd){caseCrew.splice(+cd.dataset.crewdel,1);renderCrew();return}
+  if(t.closest('#cCancel')){caseEditing&&caseSel?showCase(caseSel):showCase(null);return}
+  if(t.closest('#caseEdit')){const c=cases.find(x=>x.id===caseSel);if(c&&canEditCase(c))openCaseForm(c);return}
+  const del=t.closest('#caseDel');
+  if(del){const c=cases.find(x=>x.id===caseSel);if(!c||!canDelCase(c)||!armed(del))return;
+    try{await db.doc('cases/'+c.id).delete();showCase(null);toast('ลบเคส '+c.caseNo+' แล้ว')}catch(x){toast('ลบไม่สำเร็จ ลองอีกครั้ง')}}
+});
+$('#caseMain').addEventListener('change',e=>{if(e.target.id==='crewSel'&&e.target.value)$('#crewAdd').click()});
+$('#caseMain').addEventListener('submit',async e=>{
+  if(e.target.id!=='fCase') return; e.preventDefault(); err('#cMsg','');
+  const caseNo=$('#cNo').value.trim(), title=$('#cTitle').value.trim(), at=tsOf($('#cDate').value,$('#cTime').value), detail=$('#cDetail').value.trim();
+  if(!caseNo) return err('#cMsg','กรุณาใส่เลขที่เคส');
+  if(!title) return err('#cMsg','กรุณาใส่ชื่อเคส');
+  if(isNaN(at)) return err('#cMsg','กรุณาระบุวันที่และเวลาของเคส');
+  if(at>Date.now()+5*60000) return err('#cMsg','วันเวลาของเคสต้องไม่เกินเวลาปัจจุบัน');
+  if(cases.some(c=>c.caseNo.toLowerCase()===caseNo.toLowerCase()&&(!caseEditing||c.id!==caseEditing.id))) return err('#cMsg','เลขที่เคส '+caseNo+' มีอยู่แล้ว ใช้เลขอื่น');
+  const patients=[];
+  for(const [i,el] of [...document.querySelectorAll('#ptList .pt')].entries()){
+    const uid=el.dataset.uid, pick=k=>(el.querySelector(`input[name="${k}-${uid}"]:checked`)||{}).value||'';
+    const p={first:el.querySelector('.p-first').value.trim(),last:el.querySelector('.p-last').value.trim(),sex:el.querySelector('.p-sex').value,age:el.querySelector('.p-age').value.trim(),tri:pick('tri'),pulse:pick('pulse'),bp:pick('bp')};
+    if(!p.first&&!p.last&&!p.age&&!p.tri&&!p.pulse&&!p.bp&&!p.sex) continue;
+    if(!p.first) return err('#cMsg','ผู้บาดเจ็บคนที่ '+(i+1)+': กรุณาใส่ชื่อ (ถ้าไม่ทราบ ใส่ “ไม่ทราบชื่อ”)');
+    if(p.age&&(!/^\d{1,3}$/.test(p.age)||+p.age>130)) return err('#cMsg','ผู้บาดเจ็บคนที่ '+(i+1)+': อายุต้องเป็นตัวเลข 0–130');
+    if(!p.tri) return err('#cMsg','ผู้บาดเจ็บคนที่ '+(i+1)+': กรุณาเลือกระดับเคส (เขียว เหลือง แดง ดำ)');
+    patients.push(p);
+  }
+  if(!patients.length) return err('#cMsg','กรุณาใส่ข้อมูลผู้บาดเจ็บอย่างน้อย 1 คน');
+  const now=Date.now(), data={caseNo,title,at,detail,patients,crew:caseCrew,updatedAt:now};
+  const btn=$('#cSave'); btn.disabled=true;
+  try{
+    if(caseEditing){
+      if(!canEditCase(caseEditing)) throw new Error('คุณไม่มีสิทธิ์แก้ไขเคสนี้');
+      await db.doc('cases/'+caseEditing.id).update({...data,updatedBy:myRef().name});
+      toast('บันทึกการแก้ไขเคส '+caseNo+' แล้ว'); showCase(caseEditing.id);
+    }else{
+      const ref=db.collection('cases').doc(), author=myRef();
+      await ref.set({...data,author,createdAt:now});
+      notify('case',null,{...data,author}); toast('บันทึกเคส '+caseNo+' แล้ว'); caseSel=ref.id; caseMode='view'; renderCaseList(); renderCaseView();
+    }
+  }catch(x){err('#cMsg',x.code==='permission-denied'?'ฐานข้อมูลไม่อนุญาตให้บันทึก ตรวจสอบ Rules ใน Firebase (ต้องมีส่วน cases)':(x.message||'บันทึกไม่สำเร็จ'));btn.disabled=false}
+});
+
 /* ---- punch ---- */
 $('#punchBtn').onclick=async()=>{
   if(!me||busy) return; busy=true; renderMe();
@@ -1097,18 +1381,20 @@ async function closeShift(badge,o,opt={}){
 /* ---- admin ---- */
 const canAdmin=()=>mode==='admin';
 function setView(v){
-  [['vtMe','me'],['vtAdmin','admin'],['vtCal','cal']].forEach(([id,k])=>$('#'+id).setAttribute('aria-selected',v===k));
-  $('#pMe').hidden=v!=='me';$('#pAdmin').hidden=v!=='admin';$('#pCal').hidden=v!=='cal';
+  [['vtMe','me'],['vtAdmin','admin'],['vtCase','case'],['vtCal','cal']].forEach(([id,k])=>$('#'+id).setAttribute('aria-selected',v===k));
+  $('#pMe').hidden=v!=='me';$('#pAdmin').hidden=v!=='admin';$('#pCal').hidden=v!=='cal';$('#pCase').hidden=v!=='case';
   if(v==='cal') renderCal();
+  if(v==='case'){renderCaseList();if(caseMode==='view')renderCaseView()}
 }
 $('#vtCal').onclick=()=>setView('cal');
+$('#vtCase').onclick=()=>setView('case');
 $('#vtMe').onclick=()=>setView('me');
 $('#vtAdmin').onclick=()=>setView('admin');
 const ADMIN_USER='Admin', ADMIN_DEFAULT={salt:'lsfd-admin-default',pwHash:'7be4d36327d69e1faad94ee38d74d64c7666bff679be86f95c679af32f2d093e'};
 async function adminCred(){try{const s=await db.doc('config/admin').get();if(s.exists&&s.data().pwHash)return s.data()}catch(e){}return ADMIN_DEFAULT}
 function enterAdmin(){
   stopAll(); mode='admin'; myBadge=null; me=null;
-  show('vDash'); $('#vtMe').hidden=true; $('#vtAdmin').hidden=false; setView('admin'); repSource=null; subTab('atOfficers'); closeEvForm(); subEvents();
+  show('vDash'); $('#vtMe').hidden=true; $('#vtAdmin').hidden=false; setView('admin'); repSource=null; subTab('atOfficers'); closeEvForm(); resetCases(); subEvents(); subCases();
   $('#dName').textContent='ผู้ดูแลระบบ'; $('#dBadge').textContent='ADMIN'; $('#dRank').textContent='LSFD Command';
   setupAdmin();
 }
@@ -1194,7 +1480,7 @@ function editForm(o){
 function renderAdmin(){
   const keep=editRow&&$('#editForm')?['eFirst','eLast','eBadge','eRank','ePw','ePw2'].map(id=>[id,$('#'+id).value]):null;
   const focusId=document.activeElement&&document.activeElement.id;
-  renderAdminRows(); renderReport(); renderBackups(); renderManualList();
+  renderAdminRows(); renderReport(); renderBackups(); renderManualList(); renderHours();
   if(keep&&$('#editForm')){keep.forEach(([id,v])=>$('#'+id).value=v);if(focusId&&$('#'+focusId))$('#'+focusId).focus()}
 }
 function renderAdminRows(){
@@ -1271,7 +1557,8 @@ function buildReport(){
   const rows=allOfficers.map(o=>{
     const st=statsFor({...o,activeStart:null},by[o.badge]||[]);
     const ri=rankInfo(o.rank), times=Math.floor(st.points/GOAL), rate=+(ri?.rate||0);
-    return {badge:o.badge,first:o.first,last:o.last,rank:o.rank,category:ri?.category||'',order:rankOrder(o.rank),minutes:Math.round(st.minutes),shifts:st.done,points:st.points,times,paid:st.paid,rate,amount:times*rate};
+    const done=(by[o.badge]||[]).filter(x=>x.end), nm=done.reduce((a,x)=>a+nightMin(x.start,x.end),0), lastEnd=done.reduce((m,x)=>Math.max(m,x.end),0)||null;
+    return {badge:o.badge,first:o.first,last:o.last,rank:o.rank,category:ri?.category||'',order:rankOrder(o.rank),minutes:Math.round(st.minutes),nightMinutes:nm,dayMinutes:Math.max(0,Math.round(st.minutes)-nm),lastEnd,shifts:st.done,points:st.points,times,paid:st.paid,rate,amount:times*rate};
   }).sort((a,b)=>a.order-b.order||b.amount-a.amount||a.badge.localeCompare(b.badge));
   const firstShift=allShifts.reduce((m,s)=>Math.min(m,s.start),Infinity);
   return {periodStart,firstShift:isFinite(firstShift)?firstShift:null,periodEnd:Date.now(),currency:CUR,signer:SIGNER,rows};
@@ -1310,14 +1597,65 @@ $('#cutBtn').onclick=async e=>{
   }catch(x){toast('ตัดยอดไม่สำเร็จ: '+(x.message||x.code||''))}
   finally{b.disabled=false}
 };
+/* ---- hours per officer ---- */
+let hrSrc='current';
+function nightMin(s,e){let m=0;const d0=Date.parse(ymdOf(s)+'T00:00:00+07:00')-DAY;for(let d=d0;d<e;d+=DAY){const a=Math.max(s,d+18*3600000),b=Math.min(e,d+26*3600000);if(b>a)m+=b-a}return Math.round(m/60000)}
+function hoursRows(){
+  if(hrSrc==='current'){
+    const now=Date.now(), by={}; allShifts.forEach(s=>(by[s.badge]=by[s.badge]||[]).push(s));
+    const rows=allOfficers.map(o=>{
+      let mins=0,nm=0,n=0,pts=0,last=null;
+      for(const s of by[o.badge]||[]){const e=s.end||now;mins+=s.end?(s.minutes||0):(now-s.start)/60000;nm+=nightMin(s.start,e);if(s.end){n++;pts+=s.points||0}last=Math.max(last||0,s.start)}
+      mins=Math.round(mins); nm=Math.min(nm,mins);
+      return {badge:o.badge,name:o.first+' '+o.last,rank:o.rank,order:rankOrder(o.rank),minutes:mins,night:nm,day:mins-nm,shifts:n,points:pts,last,live:!!o.activeShiftId};
+    });
+    return {rows,range:(periodStart?fDate(periodStart)+' '+fTime(periodStart):'เริ่มใช้งานระบบ')+' – ปัจจุบัน',note:''};
+  }
+  const k=backups.find(x=>x.id===hrSrc); if(!k){hrSrc='current';return hoursRows()}
+  const byS={}; (k.shifts||[]).forEach(s=>(byS[s.badge]=byS[s.badge]||[]).push(s));
+  const rows=(k.rows||[]).map(r=>{
+    const sh=byS[r.badge]||[]; let nm=r.nightMinutes;
+    if(nm==null&&sh.length) nm=sh.reduce((a,s)=>a+nightMin(s.start,s.end),0);
+    const last=sh.reduce((m,s)=>Math.max(m,s.start),0)||r.lastEnd||null;
+    return {badge:r.badge,name:r.first+' '+r.last,rank:r.rank,order:r.order??rankOrder(r.rank),minutes:r.minutes||0,night:nm??null,day:nm==null?null:Math.max(0,(r.minutes||0)-nm),shifts:r.shifts||0,points:r.points||0,last,live:false};
+  });
+  return {rows,range:rangeTxt(k),note:(k.shiftsOmitted?'ข้อมูลรายกะไม่ได้ถูกเก็บในรอบนี้ (ข้อมูลใหญ่เกิน) จึงแยกกลางวัน/กลางคืนไม่ได้':'')};
+}
+function renderHours(){
+  if(!$('#hrSrc')) return;
+  const opts=[['current','รอบปัจจุบัน (ยังไม่ตัดยอด)'],...backups.map(k=>[k.id,'ข้อมูลสำรอง · ตัดยอด '+fDate(k.createdAt)+' '+fTime(k.createdAt)])];
+  if(!opts.some(o=>o[0]===hrSrc)) hrSrc='current';
+  const html=opts.map(([v,l])=>`<option value="${esc(v)}">${esc(l)}</option>`).join('');
+  if($('#hrSrc').dataset.h!==html){$('#hrSrc').innerHTML=html;$('#hrSrc').dataset.h=html}
+  $('#hrSrc').value=hrSrc;
+  const {rows,range,note}=hoursRows(), q=$('#hrQ').value.trim().toLowerCase(), sort=$('#hrSort').value;
+  const withH=rows.filter(r=>r.minutes>0), total=rows.reduce((a,r)=>a+r.minutes,0), max=Math.max(1,...rows.map(r=>r.minutes));
+  const top=[...rows].sort((a,b)=>b.minutes-a.minutes)[0];
+  $('#hrRange').textContent=range+(note?' · '+note:'');
+  $('#hrTotal').innerHTML=hours1(total)+'<small> ชม.</small>';
+  $('#hrAvg').innerHTML=(withH.length?hours1(total/withH.length):'0.0')+'<small> ชม.</small>';
+  $('#hrActive').innerHTML=withH.length+'<small> / '+rows.length+' คน</small>';
+  $('#hrActiveSub').textContent=rows.length-withH.length?'ยังไม่มีชั่วโมง '+(rows.length-withH.length)+' คน':'ทุกคนมีชั่วโมงแล้ว';
+  $('#hrTop').textContent=top&&top.minutes?hours1(top.minutes)+' ชม.':'—'; $('#hrTopSub').textContent=top&&top.minutes?top.name+' #'+top.badge:'';
+  const ranked=[...rows].sort((a,b)=>b.minutes-a.minutes||a.badge.localeCompare(b.badge)); const pos={}; ranked.forEach((r,i)=>pos[r.badge]=r.minutes?i+1:null);
+  const list=rows.filter(r=>!q||(r.badge+' '+r.name+' '+r.rank).toLowerCase().includes(q))
+    .sort(sort==='rank'?(a,b)=>a.order-b.order||b.minutes-a.minutes:sort==='badge'?(a,b)=>a.badge.localeCompare(b.badge):(a,b)=>b.minutes-a.minutes||a.badge.localeCompare(b.badge));
+  $('#hrEmpty').hidden=rows.length>0;
+  $('#hrBody').innerHTML=list.map(r=>`<tr><td class="num mono">${pos[r.badge]??'–'}</td><td class="badge-no">${esc(r.badge)}</td><td>${esc(r.name)}${r.live?' <span class="pill live">● เข้าเวร</span>':''}</td><td>${esc(r.rank||'-')}</td><td><div class="hbar"><b>${hours1(r.minutes)}</b><span class="track"><i class="${r.minutes?'':'zero'}" style="width:${(r.minutes/max*100).toFixed(1)}%"></i></span></div></td><td class="num mono">${r.day==null?'–':hours1(r.day)}</td><td class="num mono">${r.night==null?'–':hours1(r.night)}</td><td class="num mono">${r.shifts}</td><td class="num mono">${r.points}</td><td class="mono">${r.last?fDate(r.last):'–'}</td></tr>`).join('');
+}
+$('#hrSrc').addEventListener('change',e=>{hrSrc=e.target.value;renderHours()});
+['#hrQ','#hrSort'].forEach(id=>$(id).addEventListener('input',renderHours));
+setInterval(()=>{if(mode==='admin'&&!$('#atHours').hidden&&hrSrc==='current')renderHours()},60000);
+
 function renderBackups(){
   $('#bkEmpty').hidden=backups.length>0; $('#bkCount').textContent=backups.length?backups.length+' รอบ':'';
-  $('#bkBody').innerHTML=backups.map(k=>{const cur=k.currency||CUR;return `<tr><td class="mono">${fDate(k.createdAt)} ${fTime(k.createdAt)}</td><td class="mono">${rangeTxt(k)}</td><td class="num mono">${k.officerCount||0}</td><td class="num mono">${k.eligibleCount||0}</td><td class="num mono">${fmtMoney(k.totalAmount,cur)}</td><td><div class="bk-acts"><button class="btn sm" data-bk="view" data-id="${esc(k.id)}">ดูรายงาน</button><button class="btn sm" data-bk="pdf" data-id="${esc(k.id)}">PDF</button><button class="btn sm" data-bk="json" data-id="${esc(k.id)}">ไฟล์สำรอง</button></div></td></tr>`}).join('');
+  $('#bkBody').innerHTML=backups.map(k=>{const cur=k.currency||CUR;return `<tr><td class="mono">${fDate(k.createdAt)} ${fTime(k.createdAt)}</td><td class="mono">${rangeTxt(k)}</td><td class="num mono">${k.officerCount||0}</td><td class="num mono">${k.eligibleCount||0}</td><td class="num mono">${fmtMoney(k.totalAmount,cur)}</td><td><div class="bk-acts"><button class="btn sm" data-bk="view" data-id="${esc(k.id)}">ดูรายงาน</button><button class="btn sm" data-bk="hours" data-id="${esc(k.id)}">ชั่วโมง</button><button class="btn sm" data-bk="pdf" data-id="${esc(k.id)}">PDF</button><button class="btn sm" data-bk="json" data-id="${esc(k.id)}">ไฟล์สำรอง</button></div></td></tr>`}).join('');
 }
 $('#bkBody').addEventListener('click',async e=>{
   const b=e.target.closest('button[data-bk]'); if(!b) return;
   const k=backups.find(x=>x.id===b.dataset.id); if(!k) return;
   if(b.dataset.bk==='view'){repSource=k;renderReport();subTab('atReport');window.scrollTo(0,0)}
+  else if(b.dataset.bk==='hours'){hrSrc=k.id;renderHours();subTab('atHours');window.scrollTo(0,0)}
   else if(b.dataset.bk==='pdf') makePdf(k,b);
   else saveFile('lsfd-backup-'+fileDate(k.createdAt)+'.json',JSON.stringify(k,null,2));
 });
